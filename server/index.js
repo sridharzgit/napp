@@ -1,10 +1,12 @@
 const express = require("express")
 const mongoose = require("mongoose")
+const cors = require("cors")
 const csRoute = require("./csrouter")
 //const dataRoute = require("./datarouter")
 
 const app = express()
 const port = 3080 
+app.use(cors({origin:"http://localhost:3000"}))
 app.use(express.json())
 app.use("/cs",csRoute)
 //app.use("/data",dataRoute)
